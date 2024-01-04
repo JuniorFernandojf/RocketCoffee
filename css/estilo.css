@@ -1,0 +1,254 @@
+/*
+## **Cores:**
+
+```css
+:root {
+  --backgrond: #000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+```
+
+## **Tipo de fonte:**
+
+font-family: Manrope
+
+font-weight: 400 e 700
+*/
+
+/*=========== Trabalhando RESET ==================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+li, a{ list-style: none; text-decoration: none;}
+.cor-primaria {color: #8257E5;}
+
+/*=========== Corpo ==================*/
+body {
+    background-image: url(../img/Blur.png) ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    height: 100vh;
+}
+
+
+.nave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 19px 5px;
+    color: #fff;
+}
+.logo {
+    background-image: url(../img/Logo.png);
+}
+
+.menu {
+    display: flex;
+    padding: 0px 75px;
+    color: #fff;
+}
+.menu li {
+    padding: 0 10px;
+    
+}
+.menu li a { color: #fff;}
+
+.btn {
+    border: 1px solid #8257E5;
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    align-items: center;
+    cursor: pointer;
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principal ul {
+    color: #fff;
+    font-size: 45px;
+}
+
+.imagem {
+    height: 50vh;
+    width: 40%;
+    background-image: url(../img/Img\ Coffee.png);
+    background-image: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+.artigo { 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+/*=========== Trabalhando o desketop ==================*/
+
+
+@media (max-width: 800px) {  /*Abertura para desketop*/
+
+.nave {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(28 28 28);
+    margin: 0px 25px;
+}
+.btn { display: none; }
+
+/* ..........   menu  .......*/
+.menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 72px;
+    right: 0;
+    padding: 0;
+    height: 0px;
+    background-color: rgb(10, 10, 10);
+    transition: .6s;
+    z-index: 1; 
+    visibility: hidden;
+    overflow-y: hidden; 
+    
+}
+.menu li {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgb(28 28 28);
+}
+.menu li a { color: #999999;}
+.menu li a:hover { color: #fff;}
+.menu li:hover { 
+}
+
+#nav.active  .menu{ 
+    height: calc(100vh - 72px);
+    visibility: visible;
+    overflow-y: auto;
+}
+
+/* ..........   botao  .......*/
+#btn-mobile {
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+    color: #8257E5;
+}
+
+#hamburger {
+    display: block;
+    width: 20px;
+}
+
+#hamburger::before {
+    content:' ';
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    background: currentColor;
+    margin-top: 6px;
+    transition: .3s;
+}
+
+#hamburger::after {
+    content:' ';
+    display: block;
+    position: relative;
+    width: 12px;
+    height: 2px;
+    margin-top: 5px;
+    background: currentColor;
+    margin-top: 6px;
+    margin-left: 8px;
+    transition: .3s; 
+}
+
+#nav.active #hamburger::before {
+    transform: rotate(-135deg);
+    margin-top: 13px;
+   
+}
+#nav.active #hamburger::after {
+    transform: rotate(135deg);
+    width: 20px;
+    margin-left: 0;
+    top: -8px;
+}
+
+
+/* ..........  conteudos  .......*/
+
+.artigo { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 36px 0px;
+}
+.artigo p {
+    font-size: 21px;
+    padding: 1px;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+}
+.artigo ul {
+    padding: 26px 0;
+}
+.btn-desketop {
+    display: flex;
+    align-items: center;
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principal ul {
+    color: #fff;
+    font-size: 31px;
+}
+
+
+.imagem {
+    
+    height: 31vh;
+    width: 50%;
+    background-image: url(../img/Img\ Coffee.png);
+    background-image: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+}/*Fim do fechamento para desketop*/
